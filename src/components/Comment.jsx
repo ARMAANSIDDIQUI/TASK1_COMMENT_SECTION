@@ -3,7 +3,7 @@ export function Comment({ comment, level = 0 }) {
     const [showReplies, setShowReplies] = useState(false);
     const hasReplies = comment.replies && comment.replies.length > 0;
     return (
-        <div className={`relative border border-gray-700 rounded-sm p-8 mt-4 ml-[${level * 6}]`}>
+        <div className={`relative border border-gray-700 rounded-sm p-8 mt-4 ml-[${level * 4}]`}>
             {level >= 0 && (
                 <div className="absolute left-[-12px] top-0 bottom-0 w-1 ml-8 mt-2 mb-2 bg-gray-200 hover:bg-blue-400 cursor-pointer" 
                 onClick={() => setShowReplies(!showReplies)}/>
