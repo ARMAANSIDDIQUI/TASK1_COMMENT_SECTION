@@ -3,63 +3,100 @@ import { Comment } from "./components/Comment";
 import CommentForm from "./components/CommentForm";
 
 const initialComments = [
-    {
-    id: 1,
-    user: "Armaan",
-    image: "https://imgs.search.brave.com/gqFzT8cj61NbKtg-wtyHfQofo73ExCMUNy0-7T1geig/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzYWZhcmku/Y29tL2ltYWdlL2Fu/aW1lLWxhbmRzY2Fw/ZS13YWxscGFwZXJz/LmpwZw",
-    text: "Did anyone apply for AKTU re-evaluation? My marks feel totally off in COA.",
-    timeAgo: "2d ago",
+  {
+    id:  Date.now() - 86400000 * 2,         // 2 days old
+    user: "Admin",
+    image: "https://imgs.search.brave.com/UsR7fbbhz4JTyZDiNGgeZtgM-OWH09SmgLMAoONd7O8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvc3Vu/c2V0LW92ZXItYS1m/aWVsZC1hZXN0aGV0/aWMtYW5pbWUtc2Nl/bmVyeS1rOGJmM3N6/ejBuNTRtYjdjLmpw/Zw",
+    text: "Is my approach correct for Two Sum? I'm using two pointers after sorting but it's failing for some cases.",
+    timeAgo: "2 days ago",
     replies: [
       {
-        id: 2,
-        user: "Harshit",
+        id: Date.now() - 86400000 * 1.5,   // 1.5 days old
+        user: "Admin",
         image: "https://imgs.search.brave.com/UsR7fbbhz4JTyZDiNGgeZtgM-OWH09SmgLMAoONd7O8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvc3Vu/c2V0LW92ZXItYS1m/aWVsZC1hZXN0aGV0/aWMtYW5pbWUtc2Nl/bmVyeS1rOGJmM3N6/ejBuNTRtYjdjLmpw/Zw",
-        text: "Same here, applied for DE and OS. Hope they check it properly this time.",
-        timeAgo: "1d ago",
-        replies: [
-          {
-            id: 3,
-            user: "Anmol",
-            image: "https://imgs.search.brave.com/bUbVgCzatxoRoLUtJ8wjMYiozfLfJLCLnoQ4QEblAaA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDU2ODM0/MjAuanBn",
-            text: "They changed my result last semester after re-eval. It’s rare, but it happens!",
-            timeAgo: "12h ago",
-            replies: [],
-          },
-        ],
-      },
-      {
-        id: 4,
-        user: "Kamran",
-        image: "https://imgs.search.brave.com/f2B_EMRCmffCu8lTEXqsA7nhkTMR2ga7Ps5bVizY2r8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNzA1/MjU0NS5qcGc",
-        text: "Bro I applied last year and nothing changed. Waste of 2800 per subject. 😤",
-        timeAgo: "3d ago",
+        text: "Sorting breaks original index positions. Use a hashmap instead.",
+        timeAgo: "1 day ago",
         replies: [],
       },
     ],
   },
+
   {
-    id: 5,
-    user: "Harsh",
-    image: "https://imgs.search.brave.com/5tOrnoRWjobWeygx2zGO-yezR0_v-U340_Drj5QPB1o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2af/YXJpLmNvbS84NS85/NC9JdGJXVG0uanBn",
-    text: "Why does AKTU always delay results? This is mentally exhausting.",
-    timeAgo: "4d ago",
+    id: Date.now() - 86400000 * 4,
+    user: "Devesh",
+    image: "https://imgs.search.brave.com/f2B_EMRCmffCu8lTEXqsA7nhkTMR2ga7Ps5bVizY2r8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNzA1/MjU0NS5qcGc",
+    text: "For Valid Palindrome, do we really need two pointers or is regex enough?",
+    timeAgo: "4 days ago",
     replies: [
       {
-        id: 6,
+        id: Date.now() - 86400000 * 3,
         user: "Akshdeep",
-        image: "https://imgs.search.brave.com/JpyDiYq2l2SHesDpvKP9o3iDUoLAVNm9aDK7gtHgKRg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNzA1/MjUzOC5qcGc",
-        text: "Fr! Every semester we keep checking ERP like fools. 😞",
-        timeAgo: "3d ago",
-        replies: [
-          {
-            id: 7,
-            user: "Dhairya",
-            image: "https://imgs.search.brave.com/bpEs7QhsrJ_3Ewe_e-6f57lRej1SzI6ufFTYDHsXR-A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDE5NTE1/ODQuanBn",
-            text: "Even ERP crashes when results are out lol. Can't even handle traffic.",
-            timeAgo: "1d ago",
-            replies: [],
-          },
-        ],
+        image: "https://imgs.search.brave.com/bpEs7QhsrJ_3Ewe_e-6f57lRej1SzI6ufFTYDHsXR-A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDE5NTE1/ODQuanBn",
+        text: "Regex works but two pointers is faster and interview-friendly.",
+        timeAgo: "3 days ago",
+        replies: [],
+      },
+    ],
+  },
+
+  {
+    id: Date.now() - 86400000 * 7,
+    user: "Akshdeep",
+    image: "https://imgs.search.brave.com/bpEs7QhsrJ_3Ewe_e-6f57lRej1SzI6ufFTYDHsXR-A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDE5NTE1/ODQuanBn",
+    text: "My Contains Duplicate solution is O(n log n). Is it fine or should I optimize?",
+    timeAgo: "7 days ago",
+    replies: [
+      {
+        id: Date.now() - 86400000 * 6.5,
+        user: "Devesh",
+        image: "https://imgs.search.brave.com/f2B_EMRCmffCu8lTEXqsA7nhkTMR2ga7Ps5bVizY2r8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNzA1/MjU0NS5qcGc",
+        text: "Use a hashset for O(n). Most optimal and clean.",
+        timeAgo: "6 days ago",
+        replies: [],
+      },
+      {
+        id: Date.now() - 86400000 * 6,
+        user: "Admin",
+        image: "https://imgs.search.brave.com/UsR7fbbhz4JTyZDiNGgeZtgM-OWH09SmgLMAoONd7O8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvc3Vu/c2V0LW92ZXItYS1m/aWVsZC1hZXN0aGV0/aWMtYW5pbWUtc2Nl/bmVyeS1rOGJmM3N6/ejBuNTRtYjdjLmpw/Zw",
+        text: "Accepted in interviews as well. Prefer hash-based approach.",
+        timeAgo: "6 days ago",
+        replies: [],
+      },
+    ],
+  },
+
+  {
+    id: Date.now() - 86400000 * 3,
+    user: "Armaan",
+    image: "https://imgs.search.brave.com/gqFzT8cj61NbKtg-wtyHfQofo73ExCMUNy0-7T1geig/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzYWZhcmku/Y29tL2ltYWdlL2Fu/aW1lLWxhbmRzY2Fw/ZS13YWxscGFwZXJz/LmpwZw",
+    text: "Reverse String is easy but what’s the trick to do it in-place without extra space?",
+    timeAgo: "3 days ago",
+    replies: [
+      {
+        id: Date.now() - 86400000 * 2.8,
+        user: "Devesh",
+        image: "https://imgs.search.brave.com/f2B_EMRCmffCu8lTEXqsA7nhkTMR2ga7Ps5bVizY2r8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNzA1/MjU0NS5qcGc",
+        text: "Swap left and right pointers until they meet. No extra memory needed.",
+        timeAgo: "2 days ago",
+        replies: [],
+      },
+    ],
+  },
+
+  {
+    id: Date.now() - 86400000 * 10,
+    user: "Admin",
+    image: "https://imgs.search.brave.com/UsR7fbbhz4JTyZDiNGgeZtgM-OWH09SmgLMAoONd7O8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvc3Vu/c2V0LW92ZXItYS1m/aWVsZC1hZXN0aGV0/aWMtYW5pbWUtc2Nl/bmVyeS1rOGJmM3N6/ejBuNTRtYjdjLmpw/Zw",
+    text: "Reminder: Always check edge cases like empty strings, single elements, and large inputs when solving DSA problems.",
+    timeAgo: "10 days ago",
+    replies: [
+      {
+        id: Date.now() - 86400000 * 9,
+        user: "Akshdeep",
+        image: "https://imgs.search.brave.com/bpEs7QhsrJ_3Ewe_e-6f57lRej1SzI6ufFTYDHsXR-A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDE5NTE1/ODQuanBn",
+        text: "True, valid palindrome fails for empty string if not handled.",
+        timeAgo: "9 days ago",
+        replies: [],
       },
     ],
   },
@@ -68,7 +105,11 @@ const initialComments = [
 export default function App() {
   const [comments, setComments] = useState(() => {
     const localData = localStorage.getItem('comments');
-    return localData ? JSON.parse(localData) : initialComments;
+    const localComments = localData ? JSON.parse(localData) : [];
+    const allComments = [...initialComments, ...localComments];
+    const commentMap = new Map();
+    allComments.forEach(comment => commentMap.set(comment.id, comment));
+    return Array.from(commentMap.values());
   });
 
   useEffect(() => {

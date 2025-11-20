@@ -6,8 +6,8 @@ export function Comment({ comment, addComment, editComment, deleteComment, level
     const [isReplying, setIsReplying] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const hasReplies = comment.replies && comment.replies.length > 0;
-    const canEdit = comment.user === "Armaan";
-    const canDelete = comment.user === "Armaan";
+    const canEdit = comment.user === "Admin";
+    const canDelete = comment.user === "Admin";
 
     const handleReply = (text) => {
         addComment(text, comment.id);
