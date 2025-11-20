@@ -173,8 +173,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
-      <h1 className="text-2xl font-bold mb-6">Discussion Forum:</h1>
-      <p className="text-l font-bold mb-6">Where People Connect and coders conquest</p>
+      <div className="flex items-center justify-center bg-gray-900 text-white p-1">
+        <h1 className="text-4xl font-bold mb-6">Discussion Forum:</h1>
+      </div>
+      <div className="flex items-center justify-center bg-gray-900 text-white p-1">
+        <p className=" text-xl text-purple-400 mb-6">Where People Connect and Coders Conquest</p>
+      </div>
+      
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-2">Add a comment</h2>
         <CommentForm onSubmit={addComment} />
