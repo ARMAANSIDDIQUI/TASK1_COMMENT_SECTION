@@ -12,8 +12,8 @@ const initialComments = [
     replies: [
       {
         id: Date.now() - 86400000 * 1.5,   // 1.5 days old
-        user: "Admin",
-        image: "https://imgs.search.brave.com/UsR7fbbhz4JTyZDiNGgeZtgM-OWH09SmgLMAoONd7O8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvc3Vu/c2V0LW92ZXItYS1m/aWVsZC1hZXN0aGV0/aWMtYW5pbWUtc2Nl/bmVyeS1rOGJmM3N6/ejBuNTRtYjdjLmpw/Zw",
+        user: "Somya",
+        image: "https://imgs.search.brave.com/JpyDiYq2l2SHesDpvKP9o3iDUoLAVNm9aDK7gtHgKRg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNzA1/MjUzOC5qcGc",
         text: "Sorting breaks original index positions. Use a hashmap instead.",
         timeAgo: "1 day ago",
         replies: [],
