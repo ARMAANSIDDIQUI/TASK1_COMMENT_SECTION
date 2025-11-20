@@ -66,7 +66,14 @@ const initialComments = [
 ];
 
 export default function App() {
-  const [comments, setComments] = useState(initialComments);
+  const [comments, setComments] = useState(() => {
+    const localData = localStorage.getItem('comments');
+    return localData ? JSON.parse(localData) : initialComments;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments', JSON.stringify(comments));
+  }, [comments]);
 
   const addComment = (text, parentId = null) => {
     const newComment = {
